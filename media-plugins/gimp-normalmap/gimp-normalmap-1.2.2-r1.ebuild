@@ -23,7 +23,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	sed -e 's:\(CFLAGS\)=-O3:\1+=:' \
-		-e 's:-L/usr/X11R6/lib::' \
+		-e 's:-L/usr/X11R6/lib:-lm:' \
 		-i Makefile.linux || die
 }
 
